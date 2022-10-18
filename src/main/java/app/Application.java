@@ -4,7 +4,6 @@ import com.online.restaurant.Customer;
 import com.online.restaurant.Order;
 import com.online.restaurant.Vendor;
 import com.online.restaurant.dao.CustomerDAO;
-import com.online.restaurant.dao.Order_menu_itemDAO;
 import com.online.restaurant.dao.VendorDAO;
 
 import java.util.Date;

@@ -3,8 +3,10 @@ package app;
 import com.online.restaurant.Customer;
 import com.online.restaurant.Order;
 import com.online.restaurant.Vendor;
+import com.online.restaurant.dao.CustomerDAO;
+import com.online.restaurant.dao.Order_menu_itemDAO;
+import com.online.restaurant.dao.VendorDAO;
 
-import javax.swing.plaf.basic.BasicOptionPaneUI;
 import java.util.Date;
 
 public class Application {
@@ -58,6 +60,13 @@ public class Application {
         System.out.println("TotalAmount : "+ order.getTotalAmount());
         System.out.println("OrderDate : "+ order.getOrderDate());
         System.out.println("Address : "+ order.getDeliveryAddress());
+
+        CustomerDAO customerDAO = new CustomerDAO();
+        customerDAO.createTable();
+
+        VendorDAO vendorDAO = new VendorDAO();
+        vendorDAO.createTable();
+
     }
 
 }

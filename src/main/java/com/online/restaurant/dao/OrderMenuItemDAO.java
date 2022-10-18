@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class VendorDAO {
-    public static final String TABLE_NAME = "app_vendor";
+public class OrderMenuItemDAO {
+    public static final String TABLE_NAME = "app_order_menu_item";
 
     public void createTable(){
         try{
@@ -24,13 +24,12 @@ public class VendorDAO {
             String sql = "Select * from " + TABLE_NAME;
             String query = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME
                     + "( id bigint NOT NULL, "
-                    +" name text,"
-                    +" address text,"
-                    +" phone_number bigint,"
-                    +" city text,"
-                    +" email_id text,"
-                    +" category text,"
-                    +" CONSTRAINT app_vendor_pk PRIMARY KEY (id))";
+                    +" order_id bigint,"
+                    +" quantity int4,"
+                    +" menu_item varchar,"
+                    +" total_price numeric,"
+                    +" is_veg bool,"
+                    +" CONSTRAINT app_order_menu_item_pk PRIMARY KEY (id))";
             System.out.println("Create Table Query : "+ query);
             stmt.executeUpdate(query);
 
@@ -48,3 +47,4 @@ public class VendorDAO {
         }
     }
 }
+

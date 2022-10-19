@@ -7,15 +7,16 @@ import java.sql.Statement;
 
 public class OrderDAO {
     public static final String TABLE_NAME = "app_order";
+    private DAOService daoService;
+    public OrderDAO(){
+        //Inside Constructor
+        daoService = new DAOService();
+    }
 
     public void createTable(){
         try{
-            // 1.load JDBC Driver
-            Class.forName( "org.postgresql.Driver");
-            //2.Establish connection with your local database
-            Connection con = DriverManager
-                    .getConnection("jdbc:postgresql://localhost:5432/postgres",
-                            "postgres","5803");
+
+            Connection con = daoService.getConnection();
             //3.Create statement object
             Statement stmt = con.createStatement();
 

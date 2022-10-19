@@ -4,6 +4,7 @@ import com.online.restaurant.Customer;
 import com.online.restaurant.Order;
 import com.online.restaurant.Vendor;
 import com.online.restaurant.dao.*;
+import com.online.restaurant.service.CustomerService;
 
 import java.util.Date;
 
@@ -24,8 +25,7 @@ public class Application {
         System.out.println("Address : "+ rashi.getAddress());
         System.out.println("State : "+ rashi.getState());
         System.out.println("Email id : "+ rashi.getEmailid());
-        System.out.println("Phone : " + rashi.getPhoneNumber()+"\n");
-
+        System.out.println("Phone : " + rashi.getPhoneNumber());
 
         Vendor haldiram = new Vendor();
         haldiram.setName("Haldiram Veg Restaurant");
@@ -73,6 +73,9 @@ public class Application {
 
         OrderMenuItemDAO orderMenuItemDAO = new OrderMenuItemDAO();
         orderMenuItemDAO.createTable();
+
+        CustomerService cs = new CustomerService();
+        cs.createDummyCustomers();
 
     }
 

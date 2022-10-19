@@ -3,7 +3,17 @@ package com.online.restaurant;
 public class Customer {
     //To declare a variable
     //datatype variablename;
+    private long customerId;
     private String name;//instance variable
+
+    public long getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(long customerId) {
+        this.customerId = customerId;
+    }
+
     private String address;//instance variable
     private long phoneNumber;//instance variable
     private String city;//instance variable
